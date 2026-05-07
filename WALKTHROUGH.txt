@@ -1,0 +1,13 @@
+Walkthrough Video URL:
+
+(Record a 3-5 minute Loom or YouTube video showing:
+  1. Logging in as Alice
+  2. Creating a document and typing/formatting
+  3. Sharing with Bob (viewer + editor)
+  4. Logging in as Bob to show both access levels
+  5. Uploading a .txt file
+  6. Exporting as PDF and Markdown
+
+Then paste the link here.)
+
+URL:

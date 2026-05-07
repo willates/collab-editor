@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ProseMirror shell */
+.ProseMirror {
+  outline: none;
+  line-height: 1.15;
+}
+
+/* Preserve tab characters and render them with 4-space width.
+   Must be set on block-level children so the prose class cannot
+   reset it via a more-specific inherited value. */
+.ProseMirror p,
+.ProseMirror li,
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3 {
+  white-space: pre-wrap;
+  tab-size: 4;
+  -moz-tab-size: 4;
+}
+
+/* Override Tailwind Typography's wide line-height defaults */
+.ProseMirror p,
+.ProseMirror li,
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3 {
+  line-height: inherit;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+/* List marker colour – Typography defaults to grey; keep it the same as the text */
+.ProseMirror ul > li::marker,
+.ProseMirror ol > li::marker {
+  color: currentColor;
+}
+
+/* List container spacing – remove Typography's large top/bottom margins,
+   and collapse the extra gap that appears around nested lists */
+.ProseMirror ul,
+.ProseMirror ol {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+.ProseMirror li > ul,
+.ProseMirror li > ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Print / PDF styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  #doc-page {
+    box-shadow: none !important;
+    width: 100% !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0.75in !important;
+    background-color: white !important;
+  }
+
+  #doc-scroll-area {
+    overflow: visible !important;
+    background: white !important;
+    padding: 0 !important;
+  }
+}
