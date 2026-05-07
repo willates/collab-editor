@@ -15,7 +15,7 @@
 
 ## Live Deployment
 
-**URL:** _(add Vercel URL here after deploy)_
+**URL:** https://collab-editor-topaz.vercel.app/
 
 ## Test Credentials
 
